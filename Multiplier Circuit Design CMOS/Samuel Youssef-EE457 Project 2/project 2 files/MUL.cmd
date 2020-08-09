@@ -1,0 +1,9 @@
+s 2
+l B3
+l B2
+h B1
+h B0
+l A3
+l A2
+l A1
+h A0

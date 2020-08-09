@@ -1,0 +1,33 @@
+*** SPICE deck for cell SM_FA{lay} from library Multp
+*** Created on Tue Nov 13, 2018 23:16:46
+*** Last revised on Sun Nov 25, 2018 18:18:09
+*** Written on Sun Nov 25, 2018 18:18:14 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** TOP LEVEL CELL: SM_FA{lay}
+Mnmos@0 net@2 cin gnd gnd NMOS L=0.7U W=3.5U AS=77.252P AD=9.754P PS=89.163U PD=19.162U
+Mnmos@1 gnd B net@2 gnd NMOS L=0.7U W=3.5U AS=9.754P AD=77.252P PS=19.162U PD=89.163U
+Mnmos@2 net@2 A gnd gnd NMOS L=0.7U W=3.5U AS=77.252P AD=9.754P PS=89.163U PD=19.162U
+Mnmos@3 NSum NCout net@2 gnd NMOS L=0.7U W=3.5U AS=9.754P AD=16.678P PS=19.162U PD=30.59U
+Mnmos@4 net@6 A NSum gnd NMOS L=0.7U W=3.5U AS=16.678P AD=10.841P PS=30.59U PD=21.7U
+Mnmos@5 net@8 B net@6 gnd NMOS L=0.7U W=3.5U AS=10.841P AD=7.809P PS=21.7U PD=15.925U
+Mnmos@6 gnd cin net@8 gnd NMOS L=0.7U W=3.5U AS=7.809P AD=77.252P PS=15.925U PD=89.163U
+Mpmos@0 net@22 cin net@97 vdd PMOS L=0.7U W=7U AS=17.113P AD=13.375P PS=31.71U PD=25.725U
+Mpmos@1 net@24 B net@22 vdd PMOS L=0.7U W=7U AS=13.375P AD=13.651P PS=25.725U PD=26.25U
+Mpmos@2 vdd A net@24 vdd PMOS L=0.7U W=7U AS=13.651P AD=134.873P PS=26.25U PD=143.85U
+Mpmos@3 net@97 NCout vdd vdd PMOS L=0.7U W=7U AS=134.873P AD=17.113P PS=143.85U PD=31.71U
+Mpmos@4 NSum A net@97 vdd PMOS L=0.7U W=7U AS=17.113P AD=16.678P PS=31.71U PD=30.59U
+Mpmos@5 net@97 B NSum vdd PMOS L=0.7U W=7U AS=16.678P AD=17.113P PS=30.59U PD=31.71U
+Mpmos@6 NSum cin net@97 vdd PMOS L=0.7U W=7U AS=17.113P AD=16.678P PS=31.71U PD=30.59U
+
+* Spice Code nodes in cell cell 'SM_FA{lay}'
+VDD VDD 0 DC 3.3
+VGND GND 0 DC 0
+vA A 0 pulse(0 3.3 0 20n 40n 250n 500n)
+vB B 0 pulse(0 3.3 0 20n 40n 300n 800n)
+vcin cin 0 pulse(0 3.3 0 20n 40n 500n 1u)
+vNCout NCout 0 pulse (0 3.3 0 20n 40n 800n 2u)
+.TRANS 4u
+.include C:\Electric\model.txt
+.END

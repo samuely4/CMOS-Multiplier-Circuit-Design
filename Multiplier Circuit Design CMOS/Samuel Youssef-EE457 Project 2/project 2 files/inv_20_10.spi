@@ -1,0 +1,18 @@
+*** SPICE deck for cell inv_20_10{lay} from library Multp
+*** Created on Thu Jan 07, 2010 18:59:18
+*** Last revised on Sat Dec 01, 2018 11:40:15
+*** Written on Sat Dec 01, 2018 11:40:17 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** TOP LEVEL CELL: inv_20_10{lay}
+Mnmos@0 out in gnd gnd NMOS L=0.7U W=3.5U AS=19.6P AD=11.025P PS=28.7U PD=14.7U
+Mpmos@0 vdd in out vdd PMOS L=0.7U W=7U AS=11.025P AD=26.95P PS=14.7U PD=35.7U
+
+* Spice Code nodes in cell cell 'inv_20_10{lay}'
+VDD VDD 0 DC 3.3
+VGND GND 0 DC 0
+vin in 0 pulse(0 3.3 0 20n 40n 250n 500n)
+.TRANS 1.5u
+.include C:\Electric\model.txt
+.END

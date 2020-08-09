@@ -1,0 +1,23 @@
+*** SPICE deck for cell and{lay} from library Multp
+*** Created on Sat Sep 22, 2018 14:16:33
+*** Last revised on Sat Dec 01, 2018 11:50:08
+*** Written on Sat Dec 01, 2018 11:50:10 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** TOP LEVEL CELL: and{lay}
+Mnmos@0 net@7 B gnd gnd NMOS L=0.7U W=3.5U AS=27.563P AD=2.297P PS=35.175U PD=5.425U
+Mnmos@1 net@1 A net@7 gnd NMOS L=0.7U W=3.5U AS=2.297P AD=9.392P PS=5.425U PD=10.5U
+Mnmos@2 AB net@1 gnd gnd NMOS L=0.7U W=3.5U AS=27.563P AD=14.7P PS=35.175U PD=16.1U
+Mpmos@0 net@1 B vdd vdd PMOS L=0.7U W=7U AS=30.094P AD=9.392P PS=34.44U PD=10.5U
+Mpmos@1 vdd A net@1 vdd PMOS L=0.7U W=7U AS=9.392P AD=30.094P PS=10.5U PD=34.44U
+Mpmos@2 AB net@1 vdd vdd PMOS L=0.7U W=7U AS=30.094P AD=14.7P PS=34.44U PD=16.1U
+
+* Spice Code nodes in cell cell 'and{lay}'
+VDD VDD 0 DC 3.3
+VGND GND 0 DC 0
+vA A 0 pulse(0 3.3 0 20n 40n 250n 500n)
+VB B 0 pulse(0 3.3 0 20n 40n 300n 600n)
+.TRANS 1.5u
+.include C:\Electric\model.txt
+.END

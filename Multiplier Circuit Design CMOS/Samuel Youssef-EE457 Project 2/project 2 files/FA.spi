@@ -1,0 +1,60 @@
+*** SPICE deck for cell FA{lay} from library Multp
+*** Created on Tue Nov 13, 2018 23:17:19
+*** Last revised on Sat Dec 01, 2018 13:19:39
+*** Written on Sat Dec 01, 2018 13:19:45 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** SUBCIRCUIT Multp__CR_FA FROM CELL CR_FA{lay}
+.SUBCKT Multp__CR_FA A B cin gnd NCout vdd
+Mnmos@0 net@58 A gnd gnd NMOS L=0.7U W=3.5U AS=77.338P AD=15.21P PS=87.733U PD=28.583U
+Mnmos@1 gnd B net@58 gnd NMOS L=0.7U W=3.5U AS=15.21P AD=77.338P PS=28.583U PD=87.733U
+Mnmos@2 net@25 B gnd gnd NMOS L=0.7U W=3.5U AS=77.338P AD=12.495P PS=87.733U PD=24.85U
+Mnmos@3 NCout A net@25 gnd NMOS L=0.7U W=3.5U AS=12.495P AD=13.203P PS=24.85U PD=25.638U
+Mnmos@4 net@58 cin NCout gnd NMOS L=0.7U W=3.5U AS=13.203P AD=15.21P PS=25.638U PD=28.583U
+Mpmos@0 net@36 A vdd vdd PMOS L=0.7U W=7U AS=126.267P AD=15.067P PS=144.725U PD=29.75U
+Mpmos@1 net@84 B net@36 vdd PMOS L=0.7U W=7U AS=15.067P AD=13.153P PS=29.75U PD=25.638U
+Mpmos@2 NCout B net@84 vdd PMOS L=0.7U W=7U AS=13.153P AD=13.203P PS=25.638U PD=25.638U
+Mpmos@3 net@84 A NCout vdd PMOS L=0.7U W=7U AS=13.203P AD=13.153P PS=25.638U PD=25.638U
+Mpmos@4 vdd cin net@84 vdd PMOS L=0.7U W=7U AS=13.153P AD=126.267P PS=25.638U PD=144.725U
+.ENDS Multp__CR_FA
+
+*** SUBCIRCUIT Multp__SM_FA FROM CELL SM_FA{lay}
+.SUBCKT Multp__SM_FA A B cin gnd NCout NSum vdd
+Mnmos@0 net@84 cin gnd gnd NMOS L=0.7U W=3.5U AS=77.252P AD=9.754P PS=89.163U PD=19.162U
+Mnmos@1 gnd B net@84 gnd NMOS L=0.7U W=3.5U AS=9.754P AD=77.252P PS=19.162U PD=89.163U
+Mnmos@2 net@84 A gnd gnd NMOS L=0.7U W=3.5U AS=77.252P AD=9.754P PS=89.163U PD=19.162U
+Mnmos@3 NSum NCout net@84 gnd NMOS L=0.7U W=3.5U AS=9.754P AD=16.678P PS=19.162U PD=30.59U
+Mnmos@4 net@128 A NSum gnd NMOS L=0.7U W=3.5U AS=16.678P AD=10.841P PS=30.59U PD=21.7U
+Mnmos@5 net@8 B net@128 gnd NMOS L=0.7U W=3.5U AS=10.841P AD=7.809P PS=21.7U PD=15.925U
+Mnmos@6 gnd cin net@8 gnd NMOS L=0.7U W=3.5U AS=7.809P AD=77.252P PS=15.925U PD=89.163U
+Mpmos@0 net@22 cin net@97 vdd PMOS L=0.7U W=7U AS=17.113P AD=13.375P PS=31.71U PD=25.725U
+Mpmos@1 net@24 B net@22 vdd PMOS L=0.7U W=7U AS=13.375P AD=13.651P PS=25.725U PD=26.25U
+Mpmos@2 vdd A net@24 vdd PMOS L=0.7U W=7U AS=13.651P AD=134.873P PS=26.25U PD=143.85U
+Mpmos@3 net@97 NCout vdd vdd PMOS L=0.7U W=7U AS=134.873P AD=17.113P PS=143.85U PD=31.71U
+Mpmos@4 NSum A net@97 vdd PMOS L=0.7U W=7U AS=17.113P AD=16.678P PS=31.71U PD=30.59U
+Mpmos@5 net@97 B NSum vdd PMOS L=0.7U W=7U AS=16.678P AD=17.113P PS=30.59U PD=31.71U
+Mpmos@6 NSum cin net@97 vdd PMOS L=0.7U W=7U AS=17.113P AD=16.678P PS=31.71U PD=30.59U
+.ENDS Multp__SM_FA
+
+*** SUBCIRCUIT Multp__inv_20_10 FROM CELL inv_20_10{lay}
+.SUBCKT Multp__inv_20_10 gnd in out vdd
+Mnmos@0 out in gnd gnd NMOS L=0.7U W=3.5U AS=19.6P AD=11.025P PS=28.7U PD=14.7U
+Mpmos@0 vdd in out vdd PMOS L=0.7U W=7U AS=11.025P AD=26.95P PS=14.7U PD=35.7U
+.ENDS Multp__inv_20_10
+
+*** TOP LEVEL CELL: FA{lay}
+XCR_FA@0 A B cin gnd net@9 vdd Multp__CR_FA
+XSM_FA@0 A B cin gnd net@9 net@166 vdd Multp__SM_FA
+Xinv_20_1@0 gnd net@9 cout vdd Multp__inv_20_10
+Xinv_20_1@1 gnd net@166 sum vdd Multp__inv_20_10
+
+* Spice Code nodes in cell cell 'FA{lay}'
+VDD VDD 0 DC 3.3
+VGND GND 0 DC 0
+vA A 0 pulse(0 3.3 0 20n 40n 250n 500n)
+VB B 0 pulse(0 3.3 0 20n 40n 300n 600n)
+vcin cin 0 pulse(0 3.3 0 20n 40n 400n 800n)
+.TRANS 1.8u
+.include C:\Electric\model.txt
+.END

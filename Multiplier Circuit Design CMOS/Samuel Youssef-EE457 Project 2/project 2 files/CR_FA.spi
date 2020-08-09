@@ -1,0 +1,28 @@
+*** SPICE deck for cell CR_FA{lay} from library Multp
+*** Created on Tue Nov 13, 2018 23:16:08
+*** Last revised on Sun Nov 25, 2018 18:11:46
+*** Written on Sun Nov 25, 2018 18:12:01 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** TOP LEVEL CELL: CR_FA{lay}
+Mnmos@0 net@58 A gnd gnd NMOS L=0.7U W=3.5U AS=77.338P AD=15.21P PS=87.733U PD=28.583U
+Mnmos@1 gnd B net@58 gnd NMOS L=0.7U W=3.5U AS=15.21P AD=77.338P PS=28.583U PD=87.733U
+Mnmos@2 net@25 B gnd gnd NMOS L=0.7U W=3.5U AS=77.338P AD=12.495P PS=87.733U PD=24.85U
+Mnmos@3 NCout A net@25 gnd NMOS L=0.7U W=3.5U AS=12.495P AD=13.203P PS=24.85U PD=25.638U
+Mnmos@4 net@58 cin NCout gnd NMOS L=0.7U W=3.5U AS=13.203P AD=15.21P PS=25.638U PD=28.583U
+Mpmos@0 net@36 A vdd vdd PMOS L=0.7U W=7U AS=126.267P AD=15.067P PS=144.725U PD=29.75U
+Mpmos@1 net@84 B net@36 vdd PMOS L=0.7U W=7U AS=15.067P AD=13.153P PS=29.75U PD=25.638U
+Mpmos@2 NCout B net@84 vdd PMOS L=0.7U W=7U AS=13.153P AD=13.203P PS=25.638U PD=25.638U
+Mpmos@3 net@84 A NCout vdd PMOS L=0.7U W=7U AS=13.203P AD=13.153P PS=25.638U PD=25.638U
+Mpmos@4 vdd cin net@84 vdd PMOS L=0.7U W=7U AS=13.153P AD=126.267P PS=25.638U PD=144.725U
+
+* Spice Code nodes in cell cell 'CR_FA{lay}'
+VDD VDD 0 DC 3.3
+VGND GND 0 DC 0
+vA A 0 pulse(0 3.3 0 20n 40n 250n 500n)
+vB B 0 pulse(0 3.3 0 20n 40n 300n 800n)
+vcin cin 0 pulse(0 3.3 0 20n 40n 500n 1u)
+.TRANS 4u
+.include C:\Electric\model.txt
+.END

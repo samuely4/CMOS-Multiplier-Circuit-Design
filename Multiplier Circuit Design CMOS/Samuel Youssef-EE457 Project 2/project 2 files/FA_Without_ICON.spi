@@ -1,0 +1,48 @@
+*** SPICE deck for cell FA_Without_ICON{sch} from library Multp
+*** Created on Tue Nov 27, 2018 21:57:58
+*** Last revised on Tue Nov 27, 2018 23:18:32
+*** Written on Tue Nov 27, 2018 23:43:36 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: FA_Without_ICON{sch}
+Mnmos@0 net@19 cin net@21 gnd NMOS L=0.7U W=3.5U
+Mnmos@1 net@21 A gnd gnd NMOS L=0.7U W=3.5U
+Mnmos@2 net@21 B gnd gnd NMOS L=0.7U W=3.5U
+Mnmos@3 net@19 A net@29 gnd NMOS L=0.7U W=3.5U
+Mnmos@4 net@29 B gnd gnd NMOS L=0.7U W=3.5U
+Mnmos@5 net@80 A net@130 gnd NMOS L=0.7U W=3.5U
+Mnmos@6 net@130 B net@131 gnd NMOS L=0.7U W=3.5U
+Mnmos@7 net@131 cin gnd gnd NMOS L=0.7U W=3.5U
+Mnmos@8 net@80 net@19 net@132 gnd NMOS L=0.7U W=3.5U
+Mnmos@9 net@132 A gnd gnd NMOS L=0.7U W=3.5U
+Mnmos@10 net@132 B gnd gnd NMOS L=0.7U W=3.5U
+Mnmos@11 net@132 cin gnd gnd NMOS L=0.7U W=3.5U
+Mnmos@12 cout net@19 gnd gnd NMOS L=0.7U W=3.5U
+Mnmos@13 sum net@80 gnd gnd NMOS L=0.7U W=3.5U
+Mpmos@0 net@12 cin vdd vdd PMOS L=0.7U W=7U
+Mpmos@1 net@39 A vdd vdd PMOS L=0.7U W=7U
+Mpmos@2 net@12 B net@39 vdd PMOS L=0.7U W=7U
+Mpmos@3 net@19 A net@12 vdd PMOS L=0.7U W=7U
+Mpmos@4 net@19 B net@12 vdd PMOS L=0.7U W=7U
+Mpmos@5 net@79 net@19 vdd vdd PMOS L=0.7U W=7U
+Mpmos@6 net@101 A vdd vdd PMOS L=0.7U W=7U
+Mpmos@7 net@92 B net@101 vdd PMOS L=0.7U W=7U
+Mpmos@8 net@79 cin net@92 vdd PMOS L=0.7U W=7U
+Mpmos@9 net@80 A net@79 vdd PMOS L=0.7U W=7U
+Mpmos@10 net@80 B net@79 vdd PMOS L=0.7U W=7U
+Mpmos@11 net@80 cin net@79 vdd PMOS L=0.7U W=7U
+Mpmos@12 cout net@19 vdd vdd PMOS L=0.7U W=7U
+Mpmos@13 sum net@80 vdd vdd PMOS L=0.7U W=7U
+
+* Spice Code nodes in cell cell 'FA_Without_ICON{sch}'
+VDD VDD 0 DC 3.3
+VGND GND 0 DC 0
+vA A 0 pulse(0 3.3 0 20n 40n 250n 500n)
+vB B 0 pulse(0 3.3 0 20n 40n 400n 800n)
+vcin cin 0 pulse (0 3.3 0 20n 40n 1u 2u)
+.TRANS 4u
+.include C:\Electric\model.txt
+.END

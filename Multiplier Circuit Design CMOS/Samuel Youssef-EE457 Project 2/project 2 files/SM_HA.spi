@@ -1,0 +1,29 @@
+*** SPICE deck for cell SM_HA{lay} from library Multp
+*** Created on Tue Nov 13, 2018 23:15:53
+*** Last revised on Sun Nov 25, 2018 18:05:14
+*** Written on Sun Nov 25, 2018 18:05:17 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** TOP LEVEL CELL: SM_HA{lay}
+Mnmos@0 net@12 A gnd gnd NMOS L=0.7U W=3.5U AS=49.873P AD=14.7P PS=57.575U PD=16.1U
+Mnmos@1 net@10 B gnd gnd NMOS L=0.7U W=3.5U AS=49.873P AD=13.781P PS=57.575U PD=15.75U
+Mnmos@2 gnd net@10 net@107 gnd NMOS L=0.7U W=3.5U AS=7.074P AD=49.873P PS=14.525U PD=57.575U
+Mnmos@3 net@107 net@12 sum gnd NMOS L=0.7U W=3.5U AS=9.616P AD=7.074P PS=18.9U PD=14.525U
+Mnmos@4 sum A net@127 gnd NMOS L=0.7U W=3.5U AS=7.074P AD=9.616P PS=14.525U PD=18.9U
+Mnmos@5 net@127 B gnd gnd NMOS L=0.7U W=3.5U AS=49.873P AD=7.074P PS=57.575U PD=14.525U
+Mpmos@0 vdd A net@12 vdd PMOS L=0.7U W=7U AS=14.7P AD=51.863P PS=16.1U PD=57.225U
+Mpmos@1 vdd B net@10 vdd PMOS L=0.7U W=7U AS=13.781P AD=51.863P PS=15.75U PD=57.225U
+Mpmos@2 vdd net@10 net@48 vdd PMOS L=0.7U W=7U AS=19.768P AD=51.863P PS=34.563U PD=57.225U
+Mpmos@3 net@48 net@12 vdd vdd PMOS L=0.7U W=7U AS=51.863P AD=19.768P PS=57.225U PD=34.563U
+Mpmos@4 sum A net@48 vdd PMOS L=0.7U W=7U AS=19.768P AD=9.616P PS=34.563U PD=18.9U
+Mpmos@5 net@48 B sum vdd PMOS L=0.7U W=7U AS=9.616P AD=19.768P PS=18.9U PD=34.563U
+
+* Spice Code nodes in cell cell 'SM_HA{lay}'
+VDD VDD 0 DC 3.3
+VGND GND 0 DC 0
+vA A 0 pulse(0 3.3 0 20n 40n 250n 500n)
+vB B 0 pulse(0 3.3 0 20n 40n 300n 800n)
+.TRANS 4u
+.include C:\Electric\model.txt
+.END

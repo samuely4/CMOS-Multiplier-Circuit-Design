@@ -1,0 +1,51 @@
+Circuit: *** SPICE deck for cell MUL_Without_ICON{sch} from library Multp
+
+Vgnd: both pins shorted together -- ignoring.
+Ignoring BSIM parameter XL
+Ignoring BSIM parameter XW
+Ignoring BSIM parameter XL
+Ignoring BSIM parameter XW
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Gmin = 10
+Gmin = 1.07374
+Gmin = 0.115292
+Gmin = 0.0123794
+Gmin = 0.00132923
+Gmin = 0.000142725
+Gmin = 1.5325e-005
+Gmin = 1.6455e-006
+Gmin = 1.76685e-007
+Gmin = 1.89714e-008
+Gmin = 2.03704e-009
+Gmin = 2.18725e-010
+Gmin = 2.34854e-011
+Gmin = 2.52173e-012
+Gmin = 2.70769e-013
+Gmin = 0
+Gmin stepping succeeded in finding the operating point.
+
+
+Date: Sat Dec 01 11:27:21 2018
+Total elapsed time: 7.186 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 2605
+traniter = 2082
+tranpoints = 1042
+accept = 1042
+rejected = 0
+matrix size = 218
+fillins = 230
+solver = Normal
+Thread vector: 1309.0/880.0[4] 386.6/179.4[4] 90.0/59.4[4] 5.7/10.6[1]  2592/500
+Matrix Compiler1: 58.26 KB object code size  47.8/29.0/[23.9]
+Matrix Compiler2: off  [19.0]/21.0/29.0
+
+

@@ -1,0 +1,25 @@
+*** SPICE deck for cell CR_HA{lay} from library Multp
+*** Created on Tue Nov 13, 2018 23:15:26
+*** Last revised on Sun Nov 25, 2018 17:33:10
+*** Written on Sun Nov 25, 2018 17:33:18 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** TOP LEVEL CELL: CR_HA{lay}
+Mnmos@0 net@0 B gnd gnd NMOS L=0.7U W=3.5U AS=31.36P AD=13.781P PS=36.925U PD=15.75U
+Mnmos@1 net@17 A gnd gnd NMOS L=0.7U W=3.5U AS=31.36P AD=11.699P PS=36.925U PD=15.05U
+Mnmos@2 gnd net@17 cout gnd NMOS L=0.7U W=3.5U AS=17.191P AD=31.36P PS=25.433U PD=36.925U
+Mnmos@3 cout net@0 gnd gnd NMOS L=0.7U W=3.5U AS=31.36P AD=17.191P PS=36.925U PD=25.433U
+Mpmos@0 vdd B net@0 vdd PMOS L=0.7U W=7U AS=13.781P AD=47.367P PS=15.75U PD=50.167U
+Mpmos@1 vdd A net@17 vdd PMOS L=0.7U W=7U AS=11.699P AD=47.367P PS=15.05U PD=50.167U
+Mpmos@2 vdd net@17 net@65 vdd PMOS L=0.7U W=7U AS=10.658P AD=47.367P PS=21.35U PD=50.167U
+Mpmos@3 net@65 net@0 cout vdd PMOS L=0.7U W=7U AS=17.191P AD=10.658P PS=25.433U PD=21.35U
+
+* Spice Code nodes in cell cell 'CR_HA{lay}'
+VDD VDD 0 DC 3.3
+VGND GND 0 DC 0
+vA A 0 pulse(0 3.3 0 20n 40n 250n 500n)
+vB B 0 pulse(0 3.3 0 20n 40n 250n 500n)
+.TRANS 4u
+.include C:\Electric\model.txt
+.END

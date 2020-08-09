@@ -1,0 +1,39 @@
+*** SPICE deck for cell HA_Without_ICON{sch} from library Multp
+*** Created on Tue Nov 27, 2018 21:57:49
+*** Last revised on Tue Nov 27, 2018 22:38:05
+*** Written on Tue Nov 27, 2018 22:38:10 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: HA_Without_ICON{sch}
+Mnmos@0 cout net@33 gnd gnd NMOS L=0.7U W=3.5U
+Mnmos@1 cout net@31 gnd gnd NMOS L=0.7U W=3.5U
+Mnmos@2 net@33 B gnd gnd NMOS L=0.7U W=3.5U
+Mnmos@3 net@31 A gnd gnd NMOS L=0.7U W=3.5U
+Mnmos@4 net@77 A gnd gnd NMOS L=0.7U W=3.5U
+Mnmos@5 net@81 B gnd gnd NMOS L=0.7U W=3.5U
+Mnmos@6 sum net@77 net@139 gnd NMOS L=0.7U W=3.5U
+Mnmos@7 net@139 net@81 gnd gnd NMOS L=0.7U W=3.5U
+Mnmos@8 sum A net@114 gnd NMOS L=0.7U W=3.5U
+Mnmos@9 net@114 B gnd gnd NMOS L=0.7U W=3.5U
+Mpmos@0 cout net@33 net@17 vdd PMOS L=0.7U W=7U
+Mpmos@1 net@17 net@31 vdd vdd PMOS L=0.7U W=7U
+Mpmos@2 net@33 B vdd vdd PMOS L=0.7U W=7U
+Mpmos@3 net@31 A vdd vdd PMOS L=0.7U W=7U
+Mpmos@4 net@77 A vdd vdd PMOS L=0.7U W=7U
+Mpmos@5 net@81 B vdd vdd PMOS L=0.7U W=7U
+Mpmos@6 net@126 net@77 vdd vdd PMOS L=0.7U W=7U
+Mpmos@7 net@126 net@81 vdd vdd PMOS L=0.7U W=7U
+Mpmos@8 sum A net@126 vdd PMOS L=0.7U W=7U
+Mpmos@9 sum B net@126 vdd PMOS L=0.7U W=7U
+
+* Spice Code nodes in cell cell 'HA_Without_ICON{sch}'
+VDD VDD 0 DC 3.3
+VGND GND 0 DC 0
+vA A 0 pulse(0 3.3 0 20n 40n 250n 500n)
+vB B 0 pulse(0 3.3 0 20n 40n 300n 800n)
+.TRANS 4u
+.include C:\Electric\model.txt
+.END
